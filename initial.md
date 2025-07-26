@@ -1,0 +1,80 @@
+- create a typescript library.
+- setup a unit testing with ts-jest. Unit tests should be placed next to the file they are testing with the .test.ts extension.
+- the library should be written with OOP principles
+- document all classes and methods
+- make sure that it's possible to build the library. Output the compiled package into dist directory.
+- generate following data in the lib/data directory. The data should be generated for celtic, nordic, saxon, norman. The data should be generated as TypeScript file with an array of entries exported as default export. The array should be declared as const. The files should be named with `culture_feature.ts` format. Generate 500 entries for each culture/feature combination. Generate the data for following features:
+    - first name
+    - last name
+    - mountain name
+    - forest name
+    - flat/plains
+    - settlement/city
+    - hamlet
+    - shrubbery
+    - company name
+- create a Cultue enum with following values: celtic, nordic, saxon, norman
+- create a Feature enum with following values: first name, last name, mountain, forest, plains, settlement, hamlet, shrubbery, company
+- create following classes:
+    - RandomArrayGenerator (don't expose this class outside this repository)
+        - the class should implement NameGenerator interface
+        - it should take a data array and implement the generateName() method of NameGenerator
+        - create a unit test that will check that the generated value exists inside the passed array.
+    - DataArrayProvider (don't expose this class outside this repository)
+        - the class should be able to provide a data array based on culture and feature combination.
+        - if data array can't be provided it throws an exception
+        - create a unit test that will check it can access and provide the data array
+    - RandomPersonFirstNameGenerator
+        - the class should implement NameGenerator interface
+        - it should be initialized with a culture.
+        - it should extend from the RandomArrayGenerator
+        - internally use DataArrayProvider to get access to correct data array 
+        - create a unit test that will check if generated data comes from the data files inside lib/data dir
+    - RandomPersonLastNameGenerator
+        - the class should implement NameGenerator interface
+        - it should be initialized with a culture.
+        - it should extend from the RandomArrayGenerator
+        - internally use DataArrayProvider to get access to correct data array
+        - create a unit test that will check if generated data comes from the data files inside lib/data dir
+    - RandomMountainGenerator
+        - the class should implement NameGenerator interface
+        - it should be initialized with a culture.
+        - it should extend from the RandomArrayGenerator
+        - internally use DataArrayProvider to get access to correct data array
+        - create a unit test that will check if generated data comes from the data files inside lib/data dir
+    - RandomForestGenerator
+        - the class should implement NameGenerator interface
+        - it should be initialized with a culture.
+        - it should extend from the RandomArrayGenerator
+        - internally use DataArrayProvider to get access to correct data array
+        - create a unit test that will check if generated data comes from the data files inside lib/data dir
+    - RandomPlainsGenerator
+        - the class should implement NameGenerator interface
+        - it should be initialized with a culture.
+        - it should extend from the RandomArrayGenerator
+        - internally use DataArrayProvider to get access to correct data array
+        - create a unit test that will check if generated data comes from the data files inside lib/data dir
+    - RandomSettlementGenerator
+        - the class should implement NameGenerator interface
+        - it should be initialized with a culture.
+        - it should extend from the RandomArrayGenerator
+        - internally use DataArrayProvider to get access to correct data array
+        - create a unit test that will check if generated data comes from the data files inside lib/data dir
+    - RandomHamletGenerator
+        - the class should implement NameGenerator interface
+        - it should be initialized with a culture.
+        - it should extend from the RandomArrayGenerator
+        - internally use DataArrayProvider to get access to correct data array
+        - create a unit test that will check if generated data comes from the data files inside lib/data dir
+    - RandomShrubberyGenerator
+        - the class should implement NameGenerator interface
+        - it should be initialized with a culture.
+        - it should extend from the RandomArrayGenerator
+        - internally use DataArrayProvider to get access to correct data array
+        - create a unit test that will check if generated data comes from the data files inside lib/data dir
+    - RandomCompanyGenerator
+        - the class should implement NameGenerator interface
+        - it should be initialized with a culture.
+        - it should extend from the RandomArrayGenerator
+        - internally use DataArrayProvider to get access to correct data array
+        - create a unit test that will check if generated data comes from the data files inside lib/data dir
